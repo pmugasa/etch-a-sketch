@@ -4,6 +4,9 @@
 }
 body{
     height: 100%;
+    font-family: 'Nunito', sans-serif;
+    background-color: #D2D7DF;
+    color: #037171;
 }
 .container{
     
@@ -23,4 +26,8 @@ border:2px solid orange;
 
 h1{
     text-align: center;
+}
+.inner-div:hover{
+
+background-color: grey;
 }
