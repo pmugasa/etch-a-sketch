@@ -11,16 +11,21 @@ body {
 #container{
   margin: auto;
   height: 720px;
- width: fit-content;
+ width: 720px;
   border: 2px solid #037171;
   display: grid;
-  grid-template-columns: repeat(8, minmax(90px, 1fr));
+  grid-template-columns: repeat(8, minmax(20px, 1fr));
 
  
 }
 .inner-div{
 border: 1px solid #037171;
+
 }
+/*
+.inner-div:hover{
+  background-color:black;
+}*/
 h1 {
   text-align: center;
 }
