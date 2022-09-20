@@ -1,27 +1,16 @@
-
 //change grids button
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", handleClick);
 
-//default grids
-let userInput = 8;
-let gridNum = 64;
-gridCreate(gridNum, userInput);
-startDrawing();
-
-function handleClick(userInput, gridNum) {
+function handleClick(userInput) {
   userInput = prompt("Enter a number between 8 and 100");
-  console.log(userInput);
   gridNum = userInput * userInput;
-  if (userInput < 8) {
-    gridCreate(64, 8);
+  if (userInput < 8 || userInput > 100) {
+    alert("Number not in range😕. Please try again 🙄");
   } else {
-    gridCreate(gridNum, userInput);
+   return gridCreate(gridNum, userInput);
   }
-
-  startDrawing();
-
-  return;
+  
 }
 
 //create grids
@@ -61,11 +50,3 @@ function draw() {
   });
   return;
 }
-
-// if the user has not input value the default should be 8 grids
-// if the user inputs a value change from default to user input
-//clear sketchpad button
-const clearBtn = document.querySelector(".clear-button");
-clearBtn.addEventListener("click", () => {
-  location.reload();
-});
