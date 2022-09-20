@@ -1,14 +1,30 @@
+
+//change grids button
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", handleClick);
-function handleClick() {
-  const userInput = prompt("Enter a number between 8 and 100");
-  const gridNum = userInput * userInput;
-  gridCreate(gridNum, userInput);
+
+//default grids
+let userInput = 8;
+let gridNum = 64;
+gridCreate(gridNum, userInput);
+startDrawing();
+
+function handleClick(userInput, gridNum) {
+  userInput = prompt("Enter a number between 8 and 100");
+  console.log(userInput);
+  gridNum = userInput * userInput;
+  if (userInput < 8) {
+    gridCreate(64, 8);
+  } else {
+    gridCreate(gridNum, userInput);
+  }
+
   startDrawing();
-  
 
   return;
 }
+
+//create grids
 function gridCreate(gridNum, userInput) {
   const container = document.querySelector("#container");
   for (let i = 0; i < gridNum; i++) {
@@ -38,16 +54,18 @@ function startDrawing() {
 function draw() {
   const divs = document.querySelectorAll(".inner-div");
   divs.forEach((div) => {
-    div.addEventListener("mouseenter",start);
-    function start(){
+    div.addEventListener("mouseenter", start);
+    function start() {
       div.setAttribute("style", "background-color: black");
-    } 
-    
+    }
   });
-  return
+  return;
 }
 
-
-// when user presses mouse down this event calls mouseover event function
-// mouse over event then starts drawing
-// when user then releases the mouse up this event then calls the mouseover event function to stop
+// if the user has not input value the default should be 8 grids
+// if the user inputs a value change from default to user input
+//clear sketchpad button
+const clearBtn = document.querySelector(".clear-button");
+clearBtn.addEventListener("click", () => {
+  location.reload();
+});
