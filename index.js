@@ -1,16 +1,21 @@
+// when button is not clicked
+let userInput = 8;
+let gridNum = 64;
+gridCreate(64, 8);
 //change grids button
 const btn = document.querySelector(".btn");
+
 btn.addEventListener("click", handleClick);
 
+//handling button event
 function handleClick(userInput) {
   userInput = prompt("Enter a number between 8 and 100");
   gridNum = userInput * userInput;
   if (userInput < 8 || userInput > 100) {
     alert("Number not in range😕. Please try again 🙄");
   } else {
-   return gridCreate(gridNum, userInput);
+    return gridCreate(gridNum, userInput);
   }
-  
 }
 
 //create grids
