@@ -3,33 +3,34 @@
   margin: 0;
 }
 body {
-
   font-family: "Nunito", sans-serif;
   background-color: #d2d7df;
   color: #037171;
 }
-#container{
+#container {
   margin: auto;
   height: 720px;
- width: 720px;
+  width: 720px;
   border: 2px solid #037171;
   display: grid;
   grid-template-columns: repeat(8, minmax(20px, 1fr));
-
- 
 }
-.inner-div{
-border: 1px solid #037171;
-
+.default-grid {
+  border: 1px solid #037171;
+}
+.show-nothing {
+  display: none;
+}
+.inner-div {
+  border: 1px solid #037171;
 }
 
-.inner-div:hover{
-  background-color:black;
+.inner-div:hover {
+  background-color: grey;
 }
 h1 {
   text-align: center;
 }
-
 
 .btn {
   margin: auto;
